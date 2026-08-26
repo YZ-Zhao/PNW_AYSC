@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register – PNW AYSC</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- EmailJS — sends confirmation emails client-side without a backend server -->
+  <!-- Setup: https://www.emailjs.com  (free tier: 200 emails/month)           -->
+  <!-- 1. Create an account, add an Email Service, create two Templates         -->
+  <!-- 2. Replace the three placeholder values below with your actual keys      -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    // ── Replace these three values with your own from emailjs.com ──────────────
+    const EMAILJS_PUBLIC_KEY         = 'LK55-mv0c6IPnkvwC';
+    const EMAILJS_SERVICE_ID         = 'service_ew0da5b';
+    const EMAILJS_TEMPLATE_ADMIN     = 'template_9yjocgr';     // notification to you
+    const EMAILJS_TEMPLATE_CONFIRM   = 'template_n3cxmdi';     // confirmation to client
+    // ── Template variables your EmailJS template should use: ───────────────────
+    //   {{sailor_name}}, {{parent_name}}, {{phone}}, {{to_email}}, {{why}}
+    //   Set "To Email" in the template to {{to_email}} so one template works
+    //   for both the admin notification and the client confirmation email.
+    // ───────────────────────────────────────────────────────────────────────────
+
+    (function () { emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY }); })();
+
+    function sendEmails(e) {
+      e.preventDefault();
+
+      const sailorFirst  = document.getElementById('sailor-first').value.trim();
+      const sailorLast   = document.getElementById('sailor-last').value.trim();
+      const parentFirst  = document.getElementById('parent-first').value.trim();
+      const parentLast   = document.getElementById('parent-last').value.trim();
+      const phone        = document.getElementById('phone').value.trim();
+      const clientEmail  = document.getElementById('email').value.trim();
+      const why          = document.getElementById('why').value.trim();
+
+      const adminEmail   = 'yizhouzhao319@outlook.com';
+
+      const params = {
+        sailor_name: [sailorFirst, sailorLast].filter(Boolean).join(' ') || '(not provided)',
+        parent_name: [parentFirst, parentLast].filter(Boolean).join(' ') || '(not provided)',
+        phone:       phone || '(not provided)',
+        why:         why  || '(not provided)',
+      };
+
+      const btn = document.getElementById('submit-btn');
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+
+      // Send to admin, then send confirmation to client
+      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ADMIN, { ...params, to_email: adminEmail })
+        .then(() => emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_CONFIRM, { ...params, to_email: clientEmail }))
+        .then(() => {
+          document.getElementById('registration-form').style.display = 'none';
+          document.getElementById('success-msg').style.display = 'block';
+        })
+        .catch((err) => {
+          console.error('EmailJS error:', err);
+          btn.disabled = false;
+          btn.textContent = 'Submit Registration';
+          alert('There was a problem submitting your registration. Please try again or contact us directly at pnwaysc@gmail.com.');
+        });
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo-group">
+      <img class="logo-img" src="images/logo.png" alt="PNW AYSC Logo" />
+      <div class="logo-text">
+        <span class="club-short">PNW AYSC</span>
+        <span class="club-long">Pacific Northwest Asian Youth Sailing Club</span>
+      </div>
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="staff.html">Staff</a>
+      <a href="register.html" class="active">Register</a>
+      <a href="classes.html">Classes</a>
+      <a href="fleets.html">Fleets</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="page-hero">
+    <h1>Register Your Sailor</h1>
+    <p>Sign up today — no experience required</p>
+  </div>
+
+  <div class="section">
+    <div class="register-wrap">
+
+      <!-- Success message (hidden until form submits) -->
+      <div id="success-msg" style="display:none; text-align:center; padding:48px 0;">
+        <div style="font-size:3rem; margin-bottom:16px;">⛵</div>
+        <h2 style="color:var(--navy); margin-bottom:12px;">You're registered!</h2>
+        <p style="color:var(--muted); font-size:1rem; margin-bottom:28px;">
+          A confirmation email has been sent to your inbox. We'll be in touch soon with next steps.
+        </p>
+        <a href="index.html" class="btn-primary">Back to Home</a>
+      </div>
+
+      <form id="registration-form" onsubmit="sendEmails(event)">
+
+        <!-- Sailor Info -->
+        <div class="form-section-label">Sailor Information</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="sailor-first">First Name<span class="required-star">*</span></label>
+            <input type="text" id="sailor-first" name="sailor_first" placeholder="First name" required />
+          </div>
+          <div class="form-group">
+            <label for="sailor-last">Last Name<span class="required-star">*</span></label>
+            <input type="text" id="sailor-last" name="sailor_last" placeholder="Last name" required />
+          </div>
+        </div>
+
+        <!-- Parent / Guardian Info -->
+        <div class="form-section-label">Parent / Guardian Information</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="parent-first">First Name<span class="required-star">*</span></label>
+            <input type="text" id="parent-first" name="parent_first" placeholder="First name" required />
+          </div>
+          <div class="form-group">
+            <label for="parent-last">Last Name<span class="required-star">*</span></label>
+            <input type="text" id="parent-last" name="parent_last" placeholder="Last name" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="(425) 000-0000" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address<span class="required-star">*</span></label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required />
+        </div>
+
+        <!-- Why Join -->
+        <div class="form-section-label">Tell Us About Your Sailor</div>
+        <div class="form-group">
+          <label for="why">Why do you want to join PNW AYSC?</label>
+          <textarea id="why" name="why" placeholder="Share a bit about your child and why they'd like to join…"></textarea>
+        </div>
+
+        <div class="form-submit">
+          <button id="submit-btn" type="submit" class="btn-primary">Submit Registration</button>
+          <p style="margin-top:12px; font-size:0.85rem; color:var(--muted);">
+            <span class="required-star">*</span> Required field
+          </p>
+        </div>
+
+      </form>
+
+      <!-- Questions CTA -->
+      <div style="text-align:center; margin-top:40px; padding-top:32px; border-top: 1.5px solid #e0e8f4;">
+        <p style="color: var(--muted); margin-bottom:16px; font-size:1rem;">Have questions before signing up?</p>
+        <a href="contact.html" class="btn-secondary">Contact Us</a>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <strong>PNW AYSC</strong> &nbsp;|&nbsp; Pacific Northwest Asian Youth Sailing Club<br />
+    <span style="margin-top:6px;display:inline-block;">📞 425-999-6541 &nbsp;|&nbsp; ✉️ pnwaysc@gmail.com</span>
+  </footer>
+
+</body>
+</html>
