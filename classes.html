@@ -5,6 +5,162 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Classes – PNW AYSC</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    .syllabus-meta {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .syllabus-tag {
+      background: var(--navy);
+      color: var(--white);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+    .goals-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 48px;
+    }
+    .goals-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.97rem;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .goals-list li::before {
+      content: '✓';
+      color: var(--blue);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 48px;
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .schedule-table thead {
+      background: var(--navy);
+      color: var(--white);
+    }
+    .schedule-table thead th {
+      padding: 14px 20px;
+      text-align: left;
+      font-size: 0.9rem;
+      letter-spacing: 0.4px;
+    }
+    .schedule-table tbody tr:nth-child(even) {
+      background: var(--light-blue);
+    }
+    .schedule-table tbody tr:nth-child(odd) {
+      background: var(--white);
+    }
+    .schedule-table tbody td {
+      padding: 13px 20px;
+      font-size: 0.95rem;
+      color: var(--text);
+      border-bottom: 1px solid #e0e8f4;
+    }
+    .schedule-table tbody td:first-child {
+      font-weight: 700;
+      color: var(--navy);
+      width: 60px;
+    }
+    .format-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .format-indoor {
+      background: #e8f0fb;
+      color: var(--blue);
+    }
+    .format-water {
+      background: #e0f4f4;
+      color: #0d7a7a;
+    }
+    .class-detail-card {
+      background: var(--gray);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow);
+    }
+    .class-detail-card h3 {
+      font-size: 1.15rem;
+      color: var(--navy);
+      font-weight: 800;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--gold);
+    }
+    .class-detail-card p {
+      font-size: 0.97rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+    .topic-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0;
+    }
+    .topic-list li {
+      background: var(--white);
+      border: 1.5px solid #c8d8ee;
+      border-radius: 50px;
+      padding: 4px 14px;
+      font-size: 0.88rem;
+      color: var(--navy);
+      font-weight: 600;
+    }
+    .safety-box {
+      background: #fff8e8;
+      border-left: 5px solid var(--gold);
+      border-radius: var(--radius);
+      padding: 22px 28px;
+      margin-top: 12px;
+    }
+    .safety-box h3 {
+      color: var(--navy);
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .safety-box ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .safety-box ul li {
+      font-size: 0.95rem;
+      color: var(--text);
+      display: flex;
+      gap: 8px;
+    }
+    .safety-box ul li::before {
+      content: '•';
+      color: var(--gold);
+      font-weight: 700;
+    }
+  </style>
 </head>
 <body>
 
@@ -29,54 +185,163 @@
 
   <div class="page-hero">
     <h1>Classes &amp; Curriculum</h1>
-    <p>Everything your sailor will learn on and off the water</p>
+    <p>Youth Sailing Syllabus &nbsp;•&nbsp; Ages 8–14 &nbsp;•&nbsp; 4 Classroom + 4 On-Water Sessions</p>
   </div>
 
   <div class="section">
-    <h2 class="section-title">What We Teach</h2>
 
-    <div class="classes-list">
-
-      <div class="class-item">
-        <h3>Points of Sail</h3>
-        <p>
-          Understanding wind direction relative to the boat — from close-hauled to running downwind. Sailors learn to identify each point of sail and how their boat should behave, building the mental map they'll use every time they're on the water.
-        </p>
-      </div>
-
-      <div class="class-item">
-        <h3>Sail Trim Basics</h3>
-        <p>
-          How to adjust sails for maximum power and control, including reading telltales to know whether sails are correctly trimmed. Sailors practice pulling in and easing the mainsheet and jib to feel how the boat accelerates and points.
-        </p>
-      </div>
-
-      <div class="class-item">
-        <h3>Tacking &amp; Jibing</h3>
-        <p>
-          The two fundamental maneuvers for changing direction — tacking through the wind and jibing away from it. Covers crew coordination, timing, and how to avoid getting stuck "in irons" (head-to-wind with no steerage). Common mistakes are discussed and drilled on the water.
-        </p>
-      </div>
-
-      <div class="class-item">
-        <h3>Right of Way / Rules of the Road</h3>
-        <p>
-          Who yields to whom when boats meet: port vs. starboard tack, windward vs. leeward boat, and overtaking rules. Understanding these basics keeps everyone safe and is the foundation for any future racing or passage-making.
-        </p>
-      </div>
-
-      <div class="class-item">
-        <h3>Safety &amp; Capsize Recovery</h3>
-        <p>
-          Life jacket use and fit, man-overboard procedures, and how to read weather conditions before heading out. Sailors also practice righting a capsized dinghy so that tipping over becomes a manageable learning moment, not a scary emergency.
-        </p>
-      </div>
-
+    <!-- Overview -->
+    <h2 class="section-title">Overview</h2>
+    <div class="mission-box" style="margin-bottom: 32px;">
+      Four short lessons build the knowledge sailors need; four on-water sessions put it into practice right away. Built for ages 8–14 — clear language, hands-on drills, safety first.
     </div>
 
-    <div class="cta-block" style="margin-top:48px;">
-      <a href="register.html" class="btn-primary">Register Your Sailor</a>
+    <!-- Tags -->
+    <div class="syllabus-meta">
+      <span class="syllabus-tag">Ages 8–14</span>
+      <span class="syllabus-tag">4 Classroom Sessions</span>
+      <span class="syllabus-tag">4 On-Water Sessions</span>
+      <span class="syllabus-tag">No Experience Required</span>
     </div>
+
+    <!-- Learning Goals -->
+    <h2 class="section-title">Learning Goals</h2>
+    <ul class="goals-list">
+      <li>Name the parts of a sailboat and use basic sailing terms.</li>
+      <li>Follow water-safety practices and read basic weather cues.</li>
+      <li>Read wind direction and points of sail and adjust sail trim.</li>
+      <li>Tack and jibe with clear crew commands.</li>
+      <li>Apply right-of-way and collision-avoidance rules on the water.</li>
+    </ul>
+
+    <!-- Course Schedule -->
+    <h2 class="section-title">Course Schedule</h2>
+    <div style="overflow-x: auto; margin-bottom: 48px;">
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>Class</th>
+            <th>Format</th>
+            <th>Topic</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><span class="format-badge format-indoor">Indoors</span></td>
+            <td>Boat &amp; Safety Basics</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><span class="format-badge format-water">On Water</span></td>
+            <td>Boat Familiarization</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><span class="format-badge format-indoor">Indoors</span></td>
+            <td>Points of Sail</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><span class="format-badge format-water">On Water</span></td>
+            <td>Points of Sail Practice</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td><span class="format-badge format-indoor">Indoors</span></td>
+            <td>Tacking &amp; Jibing</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td><span class="format-badge format-water">On Water</span></td>
+            <td>Tacking &amp; Jibing Practice</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td><span class="format-badge format-indoor">Indoors</span></td>
+            <td>Rules of the Road</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td><span class="format-badge format-water">On Water</span></td>
+            <td>Final Skills Review</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Class Details -->
+    <h2 class="section-title">Class Details</h2>
+
+    <div class="class-detail-card">
+      <h3>Boat &amp; Safety Basics</h3>
+      <p>
+        This class covers the fundamentals every sailor needs before stepping into the boat. Sailors will learn to identify the major parts of a sailboat, tie the handful of knots used most often on the water, and read basic weather cues like wind and cloud patterns before heading out. The class also introduces how to rig the boat from the ground up and the clear, calm communication habits that keep everyone safe once they're on the water.
+      </p>
+      <ul class="topic-list">
+        <li>Boat anatomy</li>
+        <li>Lines &amp; knots</li>
+        <li>Reading the weather</li>
+        <li>Rigging the boat</li>
+        <li>Communication</li>
+      </ul>
+    </div>
+
+    <div class="class-detail-card">
+      <h3>Points of Sail</h3>
+      <p>
+        This class introduces how sailboats move relative to the wind, which is the foundation for everything else in the program. Sailors will learn how to find true wind direction, understand why the no-go zone makes some directions impossible to sail directly into, and work through each of the five points of sail one at a time. Along the way, they'll pick up the trim rule for adjusting sails and practice calling out wind direction clearly to their crew.
+      </p>
+      <ul class="topic-list">
+        <li>How to find the wind</li>
+        <li>The no-go zone</li>
+        <li>The five points of sail</li>
+        <li>The trim rule</li>
+        <li>Calling out wind direction</li>
+        <li>Learning every point of sail</li>
+      </ul>
+    </div>
+
+    <div class="class-detail-card">
+      <h3>Tacking &amp; Jibing</h3>
+      <p>
+        This class breaks down the two maneuvers sailors use to change direction — tacking and jibing — and why getting them right matters for both speed and safety. Sailors will focus on clear crew communication and readiness before each maneuver, understand how roles are divided between crew members, and learn how to control the boom safely as the boat turns through the wind. A dry-land walkthrough lets sailors practice the sequence of steps before trying it on the water.
+      </p>
+      <ul class="topic-list">
+        <li>Communication &amp; readiness</li>
+        <li>Crew roles</li>
+        <li>Controlling the boom</li>
+        <li>Dry-land walkthrough</li>
+      </ul>
+    </div>
+
+    <div class="class-detail-card">
+      <h3>Rules of the Road &amp; Final Review</h3>
+      <p>
+        This final class covers the right-of-way rules and collision-avoidance skills sailors need to safely share the water with other boats. Sailors will learn how sail and power vessels interact under right-of-way rules, work through realistic on-water scenarios to practice avoiding collisions, and revisit the points of sail covered earlier in the program to reinforce those skills. By the end of this class, sailors should feel confident applying what they've learned across a full day on the water.
+      </p>
+      <ul class="topic-list">
+        <li>Right of way</li>
+        <li>Review points of sail</li>
+        <li>Avoiding collision</li>
+        <li>Scenario practice</li>
+        <li>Sail versus power</li>
+      </ul>
+    </div>
+
+    <!-- Safety & What to Bring -->
+    <div class="safety-box">
+      <h3>Safety &amp; What to Bring</h3>
+      <ul>
+        <li>Sessions may shift depending on weather, water, or equipment conditions.</li>
+        <li>Bring: water bottle, weather-ready clothing, and sun protection.</li>
+      </ul>
+    </div>
+
+    <div class="cta-block" style="margin-top: 48px;">
+      <a href="register.html" class="btn-primary">Register</a>
+    </div>
+
   </div>
 
   <footer>

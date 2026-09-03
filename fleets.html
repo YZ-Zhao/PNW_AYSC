@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fleets – PNW AYSC</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    @media (max-width: 768px) {
+      .fleet-card { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
@@ -29,37 +34,85 @@
 
   <div class="page-hero">
     <h1>Our Fleets</h1>
-    <p>The boats and facilities that power our program</p>
+    <p>The boats that power our program</p>
   </div>
 
   <div class="section">
-    <p style="color:var(--muted); margin-bottom:40px; font-size:1rem; font-style:italic;">
-      Full fleet details are coming soon. Below is a preview of the types of boats and facilities we use — stay tuned for confirmed locations and availability.
-    </p>
-
     <div class="fleets-grid">
 
-      <!-- Boat 1 -->
+      <!-- Catalina 22 -->
       <div class="fleet-card">
-        <img src="images/2643.JPG" alt="Optimist dinghy" />
+        <img src="images/Catalina22.JPG" alt="Catalina 22" />
         <div class="fleet-card-body">
-          <h3>Optimist Dinghy</h3>
+          <h3>Catalina 22</h3>
           <p>
-            The Optimist is the world's most widely sailed youth dinghy, designed specifically for sailors ages 7–15. Its stable, forgiving hull makes it perfect for beginners learning the fundamentals of sail trim, tacking, and boat control in a safe and manageable platform.
+            A versatile 22-foot keelboat with a roomy cockpit, perfect for small-group sessions where coaches and students can work side by side. Its stable, self-righting keel makes it one of the most forgiving boats for learning fundamentals — from sail trim to crewing together as a team.
           </p>
-          <div class="fleet-address">📍 Kirkland Marina Park, Kirkland, WA 98033</div>
+          <table class="specs-table">
+            <tr><td>Length Overall</td><td>21 ft 6 in (6.55 m)</td></tr>
+            <tr><td>Beam</td><td>7 ft 10 in (2.39 m)</td></tr>
+            <tr><td>Draft (board up)</td><td>1 ft 10 in</td></tr>
+            <tr><td>Draft (board down)</td><td>5 ft 0 in</td></tr>
+            <tr><td>Sail Area</td><td>212 sq ft</td></tr>
+            <tr><td>Displacement</td><td>2,250 lbs (1,020 kg)</td></tr>
+            <tr><td>Crew</td><td>Up to 5</td></tr>
+          </table>
         </div>
       </div>
 
-      <!-- Boat 2 -->
+      <!-- El Toro -->
       <div class="fleet-card">
-        <img src="images/2645.JPG" alt="Club 420 dinghy" />
+        <img src="images/El_Toro.JPG" alt="El Toro" />
         <div class="fleet-card-body">
-          <h3>Club 420</h3>
+          <h3>El Toro</h3>
           <p>
-            The Club 420 is a double-handed dinghy used throughout North America for youth team racing and intermediate development. Sailors who have mastered the basics graduate to the C420, learning crew coordination, spinnaker handling, and advanced racing tactics.
+            A classic 8-foot single-handed pram dinghy that has introduced generations of young sailors to the sport. Light, simple, and forgiving, the El Toro lets beginners develop independent boat-handling skills and confidence at their own pace.
           </p>
-          <div class="fleet-address">📍 Meydenbauer Bay Park, Bellevue, WA 98004</div>
+          <table class="specs-table">
+            <tr><td>Length Overall</td><td>7 ft 10 in (2.38 m)</td></tr>
+            <tr><td>Beam</td><td>3 ft 11 in (1.19 m)</td></tr>
+            <tr><td>Sail Area</td><td>38 sq ft</td></tr>
+            <tr><td>Weight</td><td>77 lbs (35 kg)</td></tr>
+            <tr><td>Mast Height</td><td>10 ft 6 in</td></tr>
+            <tr><td>Crew</td><td>1 (single-handed)</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- Ranger Minto -->
+      <div class="fleet-card">
+        <img src="images/Ranger Minto.jpg" alt="Ranger Minto" />
+        <div class="fleet-card-body">
+          <h3>Ranger Minto</h3>
+          <p>
+            A stable and responsive two-person dinghy purpose-built for youth sail training. The Minto's manageable size and balanced sail plan make it an excellent boat for practicing tacking, jibing, and crew coordination.           </p>
+          <table class="specs-table">
+            <tr><td>Length Overall</td><td>12 ft 0 in (3.66 m)</td></tr>
+            <tr><td>Beam</td><td>4 ft 8 in (1.42 m)</td></tr>
+            <tr><td>Sail Area</td><td>72 sq ft</td></tr>
+            <tr><td>Weight</td><td>180 lbs (82 kg)</td></tr>
+            <tr><td>Hull Type</td><td>Fiberglass</td></tr>
+            <tr><td>Crew</td><td>2</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- Benshee -->
+      <div class="fleet-card">
+        <img src="images/Benshee.JPG" alt="Benshee" />
+        <div class="fleet-card-body">
+          <h3>Benshee</h3>
+          <p>
+            A nimble and exciting dinghy that rewards sailors who have built their core skills. The Benshee's lively performance and responsive helm make it a natural next step for developing sailors ready to push their abilities further and experience the full thrill of sailing on the water.
+          </p>
+          <table class="specs-table">
+            <tr><td>Length Overall</td><td>14 ft 0 in (4.27 m)</td></tr>
+            <tr><td>Beam</td><td>5 ft 6 in (1.68 m)</td></tr>
+            <tr><td>Sail Area</td><td>115 sq ft</td></tr>
+            <tr><td>Weight</td><td>265 lbs (120 kg)</td></tr>
+            <tr><td>Hull Type</td><td>Fiberglass</td></tr>
+            <tr><td>Crew</td><td>2</td></tr>
+          </table>
         </div>
       </div>
 
