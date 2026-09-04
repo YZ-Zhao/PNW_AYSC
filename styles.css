@@ -100,7 +100,7 @@ nav a:hover, nav a.active {
 .hero {
   position: relative;
   width: 100%;
-  height: 480px;
+  height: 680px;
   overflow: hidden;
   background: var(--navy);
 }
@@ -109,7 +109,7 @@ nav a:hover, nav a.active {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center bottom;
   opacity: 0.85;
 }
 
