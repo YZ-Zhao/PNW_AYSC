@@ -38,10 +38,11 @@
       const adminEmail   = 'yizhouzhao319@outlook.com';
 
       const params = {
-        sailor_name: [sailorFirst, sailorLast].filter(Boolean).join(' ') || '(not provided)',
-        parent_name: [parentFirst, parentLast].filter(Boolean).join(' ') || '(not provided)',
-        phone:       phone || '(not provided)',
-        why:         why  || '(not provided)',
+        sailor_name:  [sailorFirst, sailorLast].filter(Boolean).join(' ') || '(not provided)',
+        parent_name:  [parentFirst, parentLast].filter(Boolean).join(' ') || '(not provided)',
+        phone:        phone || '(not provided)',
+        why:          why  || '(not provided)',
+        client_email: clientEmail,
       };
 
       const btn = document.getElementById('submit-btn');
