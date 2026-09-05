@@ -13,7 +13,8 @@
   <script>
     // ── Replace these three values with your own from emailjs.com ──────────────
     const EMAILJS_PUBLIC_KEY         = 'LK55-mv0c6IPnkvwC';
-    const EMAILJS_SERVICE_ID         = 'service_ew0da5b';
+    const EMAILJS_SERVICE_ID         = 'service_ew0da5b';       // Outlook — admin notification
+    const EMAILJS_SERVICE_GMAIL      = 'service_1ghj69n';       // Gmail — client confirmation
     const EMAILJS_TEMPLATE_ADMIN     = 'template_9yjocgr';     // notification to you
     const EMAILJS_TEMPLATE_CONFIRM   = 'template_n3cxmdi';     // confirmation to client
     // ── Template variables your EmailJS template should use: ───────────────────
@@ -51,7 +52,7 @@
 
       // Send to admin, then send confirmation to client
       emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ADMIN, { ...params, to_email: adminEmail })
-        .then(() => emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_CONFIRM, { ...params, to_email: clientEmail }))
+        .then(() => emailjs.send(EMAILJS_SERVICE_GMAIL, EMAILJS_TEMPLATE_CONFIRM, { ...params, to_email: clientEmail }))
         .then(() => {
           document.getElementById('registration-form').style.display = 'none';
           document.getElementById('success-msg').style.display = 'block';
