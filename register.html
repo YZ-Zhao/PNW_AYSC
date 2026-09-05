@@ -51,7 +51,7 @@
       btn.textContent = 'Sending…';
 
       // Send to admin, then send confirmation to client
-      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ADMIN, { ...params, to_email: adminEmail })
+      emailjs.send(EMAILJS_SERVICE_GMAIL, EMAILJS_TEMPLATE_ADMIN, { ...params, to_email: adminEmail })
         .then(() => emailjs.send(EMAILJS_SERVICE_GMAIL, EMAILJS_TEMPLATE_CONFIRM, { ...params, to_email: clientEmail }))
         .then(() => {
           document.getElementById('registration-form').style.display = 'none';
